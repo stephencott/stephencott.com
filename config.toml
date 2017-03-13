@@ -47,7 +47,7 @@ googleAnalytics = ""
 
   [taxonomies]
 	tag = "tags"
-	categorie = "categories"
+	category = "categories"
 	series = "Series"
 
   [params.social]
