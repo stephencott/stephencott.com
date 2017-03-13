@@ -35,7 +35,7 @@ googleAnalytics = ""
   # Nav links in the side bar
   [[params.navlinks]]
   name = "Home"
-  url = "www.stephencott.com"
+  url = "stephencott.com"
 
   [[params.navlinks]]
   name = "About"
@@ -44,6 +44,11 @@ googleAnalytics = ""
   [[params.navlinks]]
   name = "Get in touch"
   url = "contact/"
+
+  [taxonomies]
+	tag = "tags"
+	categorie = "categories"
+	series = "Series"
 
   [params.social]
   #facebook      = "full page or profile url in facebook"
