@@ -1,4 +1,4 @@
-baseurl = "http://www.stephencott.com"
+baseurl = "http://stephencott.com"
 title = "Stephen Cott"
 theme = "hugo-tracks-theme"
 languageCode = "en-us"
@@ -34,7 +34,7 @@ googleAnalytics = ""
   # Nav links in the side bar
   [[params.navlinks]]
   name = "Home"
-  url = ""
+  url = "www.stephencott.com"
 
   [[params.navlinks]]
   name = "About"
