@@ -20,6 +20,10 @@ build:
     # Read more about steps on our dev center:
     # http://devcenter.wercker.com/docs/steps/index.html
   steps:
+    - script:
+        name: download theme
+        code: |
+          $(git clone https://github.com/ageekymonk/hugo-tracks-theme ./themes/hugo-tracks-theme)
     - arjen/hugo-build:
       version: "0.19"
       theme: hugo-tracks-theme 
