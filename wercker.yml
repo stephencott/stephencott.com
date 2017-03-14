@@ -33,6 +33,6 @@ deploy:
         homepath: home/stephen/test/
         directory: html
         sshkey: $MYKEY
-	user: stephen
+        user: stephen
 
 
