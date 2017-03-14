@@ -8,6 +8,7 @@ disqusShortname = ""
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
 
+
 [params]
   # Use custom.css for your custom styling
   style = "default"
