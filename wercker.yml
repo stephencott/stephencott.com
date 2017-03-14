@@ -28,7 +28,7 @@ deploy:
   steps:
     - install-packages:
       packages: openssh-client rsync
-    - add-to-known-hosts:
+    - add-to-known_hosts:
         hostname: $HOSTNAME
     - mktemp:
             envvar: PRIVATEKEY_PATH
