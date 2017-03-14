@@ -41,8 +41,8 @@ deploy:
     - script:
         name: transfer blog
         code: |
-          rsync -au -e "ssh -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress public/* stephen@stephencott.com:/var/www/html/
-          ssh -i $PRIVATEKEY_PATH -l stephen -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no stephencott.com chown -R www-data:www-data /var/www
+          rsync -au -e "ssh -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress public/* root@stephencott.com:/var/www/html/
+          ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no stephencott.com chown -R www-data:www-data /var/www
 
     - script:
         name: restart nginx
