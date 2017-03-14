@@ -24,7 +24,12 @@ build:
         name: echo
         code: |
           echo "hello world!"
-    - lejoe/rsync-deploy@2.12.0
+deploy:
+  steps:
+    - install-packages:
+      packages: git ssh-client
+
+    - lejoe/rsync-deploy@2.12.0:
         host: stephencott.com
         homepath: home/stephen/test/
         directory: project
