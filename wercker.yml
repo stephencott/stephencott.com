@@ -32,7 +32,7 @@ deploy:
         host: stephencott.com
         homepath: /home/stephen/test
         directory: html
-        sshkey: $BLOGKEY
+        sshkey: $WERCKER
         user: stephen
         source: public
 
