@@ -30,9 +30,10 @@ deploy:
         packages: git ssh-client
     - lejoe/rsync-deploy@2.12.0:
         host: stephencott.com
-        homepath: home/stephen/test/
+        homepath: /home/stephen/test
         directory: html
         sshkey: $MYKEY
         user: stephen
+        source: public
 
 
