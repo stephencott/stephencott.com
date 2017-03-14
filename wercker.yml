@@ -27,7 +27,9 @@ build:
 deploy:
   steps:
     - install-packages:
-        packages: git ssh-client
+      packages: openssh-client rsync
+    - add-to-known-hosts:
+        hostname: $HOSTNAME
     - mktemp:
             envvar: PRIVATEKEY_PATH
     - create-file:
@@ -39,5 +41,10 @@ deploy:
     - script:
         name: transfer blog
         code: |
-          rsync -au -e "ssh -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress public/* stephen@stephencott.com:/home/stephen/test 
+          rsync -au -e "ssh -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress public/* stephen@stephencott.com:/var/www/html/
+          ssh -i $PRIVATEKEY_PATH -l stephen -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no stephencott.com chown -R www-data:www-data /var/www
+
+    - script:
+        name: restart nginx
+        code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no stephencott.com nginx -s reload
 
