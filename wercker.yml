@@ -39,5 +39,5 @@ deploy:
     - script:
         name: transfer blog
         code: |
-          rsync -au -e "ssh -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no UserKnownHostsFile=/dev/null" --progress public/* stephen@stephencott.com:/home/stephen/test 
+          rsync -au -e "ssh -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress public/* stephen@stephencott.com:/home/stephen/test 
 
