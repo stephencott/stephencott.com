@@ -36,12 +36,8 @@ deploy:
             content: $WERCKER_PRIVATE
             overwrite: true
 
-    - lejoe/rsync-deploy@2.12.0:
-        host: stephencott.com
-        homepath: /home/stephen/test
-        directory: html
-        sshkey: $PRIVATEKEY_PATH
-        user: stephen
-        source: public
-
+    - script:
+        name: transfer blog
+        code: |
+          rsync -au -e "ssh -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no UserKnownHostsFile=/dev/null" --progress public/* stephen@stephencott.com:/home/stephen/test 
 
